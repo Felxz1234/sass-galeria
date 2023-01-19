@@ -30,6 +30,9 @@ body{
     display: flex;
     justify-content: space-between;
     @include mixins.container;
+    @include mixins.mobile{
+        padding: 1.1rem;
+    }
 
     &-brand{
         color: variables.$primary-color;
@@ -39,6 +42,10 @@ body{
     &-social-media{
         ul{
             @include mixins.flex-center;
+            @include mixins.mobile{
+                display: none;
+            }
+        
             height: 100%;
 
             li{
@@ -59,6 +66,9 @@ body{
         ul{
             height: 100%;
             @include mixins.flex-center;
+            @include mixins.mobile{
+                display: none;
+            }
 
             li{
                 margin: 0 1rem;
@@ -86,6 +96,38 @@ body{
 }
 
 .gallery{
+    @include mixins.mobile{
+       flex-direction: column
+    }
+
+    #card-1{
+        @include mixins.bg-img('animais.jpg')
+    }
+    #card-2{
+        @include mixins.bg-img('arquitetura.jpg')
+    }
+    #card-3{
+        @include mixins.bg-img('cidade.jpg')
+    }
+    #card-4{
+        @include mixins.bg-img('decoracao.jpg')
+    }
+    #card-5{
+        @include mixins.bg-img('esportes.jpg')
+    }
+    .card-6{
+        @include mixins.bg-img('natureza.jpg')
+    }
+    #card-7{
+        @include mixins.bg-img('paisagem.jpg')
+    }
+    #card-8{
+        @include mixins.bg-img('pessoas.jpg')
+    }
+    #card-9{
+        @include mixins.bg-img('refeicoes.jpg')
+    }
+
     @include mixins.flex-center;
     @include mixins.container;
     flex-wrap: wrap;
@@ -93,9 +135,16 @@ body{
     padding: 0;
 
     &-card{
+        @include mixins.mobile{
+            width: 90%;
+            margin-bottom: 6%;
+         }
         width: 31%;
         height: 400px;
         margin-bottom: 4%;
+        @include mixins.flex-center;
+        flex-direction: column;
+        color: variables.$primary-color;
 
         &-title{
             font-size: 2rem;
@@ -120,8 +169,18 @@ body{
 
     }
     
-    #card-1{
-        
+
+    }
+
+
+footer{
+    text-align: center;
+    padding-bottom: 2rem;
+
+
+    span{
+        font-weight:bold;
+        color:variables.$secoundary-color;
     }
 
 }
